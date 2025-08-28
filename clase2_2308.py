@@ -45,6 +45,7 @@ no_estudiante = True
 
 # Listas -> list -> Colecciones de datos -> []
 # Las listas (list) -> son mutables
+# Útiles: Usuarios conectados, historial, logs
 
 alumnos = ["Carlos", "Jose", "Hendrik"]
 
@@ -83,6 +84,7 @@ equipos_futbol[2].pop(0)
 
 # Tuplas -> tuple -> colecciones de datos -> ()
 # Las tuplas (tuple) -> son inmutables
+# Útiles para: coordenadas, versiones, config
 
 datos_nombres = ("Carlos", "Hendrik", "Jose")
 
