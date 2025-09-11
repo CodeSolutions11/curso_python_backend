@@ -146,8 +146,14 @@ def calculadora(operacion, *numeros, precision=2, mostrarProceso=False):
         if mostrarProceso:
             print(f"Restando: {numeros[0]} - {"-".join(map(str, numeros[1:]))} = {result}")
 
+    elif operacion == "division": 
+        if 0 in numeros[1:]:
+            return "Error: división por cero"
+        result = numeros[0]
+        
+
     return round(result, precision)
 
 # print(round(17, 3))
-print(calculadora("suma", 1, 2, 3, 4, 5, mostrarProceso=True))
+print(calculadora("suma", 1, 20, 3, 4, 5, mostrarProceso=True))
 print(calculadora("resta", 10, 2, 3, 4, 5, mostrarProceso=True))
