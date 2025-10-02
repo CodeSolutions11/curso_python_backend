@@ -1,0 +1,6 @@
+[2025-10-01 22:32:04] Iniciando procesamiento de empleados_prueba.csv
+[2025-10-01 22:32:04] Leídas 3 filas
+[2025-10-01 22:32:04] Error crítico: JSONEncoder.__init__() got an unexpected keyword argument 'index'. Did you mean 'indent'?
+[2025-10-01 22:37:53] Iniciando procesamiento de empleados_prueba.csv
+[2025-10-01 22:37:53] Leídas 3 filas
+[2025-10-01 22:37:53] Datos Guardados en datos_procesados/procesado_empleados_prueba.json

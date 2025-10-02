@@ -1,0 +1,5 @@
+Línea 1: Datos importante
+Línea 2: Más informacion
+Línea 3: Final del archivo
+Línea 4: Contenido añadido
+Línea 4: Contenido añadido

@@ -1,0 +1,3 @@
+Producto: Laptop
+Precio: $800
+Stock: 15
