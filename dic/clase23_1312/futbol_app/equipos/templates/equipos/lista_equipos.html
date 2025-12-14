@@ -1,0 +1,36 @@
+<!-- templates/home.html -->
+{% extends 'equipos/base.html' %}
+{% block content %}
+<h2 style="color: white; text-align: center; margin-bottom: 2rem;">🏆 Equipos Top por Puntos</h2>
+<div class="grid">
+    {% for equipo in equipos %}
+    <div class="card">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <img src="{{ equipo.escudo }}" alt="{{ equipo.nombre }}" class="escudo">
+            <div>
+                <h3>{{ equipo.nombre }}</h3>
+                <p style="color: #666;">{{ equipo.get_liga_display }} • {{ equipo.ciudad }}</p>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">{{ equipo.puntos }}</div>
+                <div>Puntos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">{{ equipo.victorias }}</div>
+                <div>Victorias</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">{{ equipo.diferencia_goles }}</div>
+                <div>Dif. Goles</div>
+            </div>
+        </div>
+        <a href="{% url 'detalle_equipo' equipo.id %}" class="btn">Ver Equipo 👀</a>
+    </div>
+    {% endfor %}
+</div>
+<div style="text-align: center; margin-top: 2rem;">
+    <a href="{% url 'lista_equipos' %}" class="btn btn-primary">Ver Todos los Equipos ⚽</a>
+</div>
+{% endblock %}

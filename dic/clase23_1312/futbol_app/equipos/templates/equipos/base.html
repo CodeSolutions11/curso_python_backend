@@ -1,0 +1,50 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>⚽ Mi Equipo Favorito</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .navbar { background: rgba(0,0,0,0.8); color: white; padding: 1rem; backdrop-filter: blur(10px); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .card { background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); margin: 1rem; padding: 1.5rem; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .btn { background: #28a745; color: white; padding: 0.7rem 1.5rem; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; }
+        .btn:hover { background: #218838; transform: scale(1.05); }
+        .btn-primary { background: #007bff; }
+        .btn-danger { background: #dc3545; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+        .escudo { width: 80px; height: 80px; object-fit: contain; border-radius: 50%; }
+        .stats { display: flex; justify-content: space-between; margin: 1rem 0; }
+        .stat { text-align: center; }
+        .stat-value { font-size: 1.5rem; font-weight: bold; color: #007bff; }
+        .seguir-btn { background: #ff6b6b; border-radius: 50px; }
+        .seguir-btn.siguiendo { background: #51cf66; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>⚽ Mi Equipo Favorito</h1>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <script>
+        function toggleSeguir(id) {
+            fetch(`/seguir/${id}/`)
+                .then(response => response.json())
+                .then(data => {
+                    const btn = document.getElementById(`seguir-${id}`);
+                    if (data.siguiendo) {
+                        btn.textContent = '✅ Siguiendo';
+                        btn.classList.add('siguiendo');
+                    } else {
+                        btn.textContent = '➕ Seguir';
+                        btn.classList.remove('siguiendo');
+                    }
+                });
+        }
+    </script>
+</body>
+</html>
